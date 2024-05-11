@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Display</title>
+    <style>
+    body {
+        background-image: url(exam3.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        text-align: center; 
+    }
+</style>
+    <script>
+        function displayUserInfo() {
+            
+            var username = document.getElementById('username').value;
+
+            
+            if (username >= 80001 && username <= 80010) {
+                
+                var userInfo = {
+                    80001: { name: 'DASARI SREE PUJITHA',branch:'AI&DS',block: 'A', flour: '9900485873', room: 'D.NO: 10-2,muslim bazar', bench: 'PAID',corner: 'Odd' },
+                    80002: { name:'SK FATHIMA BEE',branch:'CSE',block: 'B', flour: '7702307191', room: 'D.NO:11-1,KLU bazar', bench: 'PAID',corner: 'Odd' },
+                    80003: { name:'MADIREDDY BHAVANA NAGA SAI',branch:'CS&IT',block:'C',flour: '6305491518', room: 'D.NO:11-10,Maya bazar', bench: 'NOT PAID',corner: 'Even' },
+                    80004: { name:'VADLAMUDI LASYA DURGA',branch:'ECE',block: 'D', flour: '9492004858', room: 'D.NO:9-76,Big temple', bench: 'PAID',corner: 'Even' },
+                    80005: { name:'BUDDHARAJU ROSHETHA',branch:'AI&DS',block: 'A', flour: '9963234873', room: 'D.NO:12-1,Friends bakery', bench: 'NOT PAID',corner: 'Odd' },
+                    80006: {name:'PALADUGU SAI SREE',branch:'EEE', block: 'B', flour: '6302572541', room: 'D.NO:13-12,Museam road', bench: 'PAID',corner: 'Even' },
+                    80007: { name:'CHAKKA ISHWARI TANVI',branch:'IOT',block: 'C', flour: '8978439237', room: 'D.NO:13-6,Gachiboli', bench: 'NOT PAID',corner: 'Even' },
+                    80008: { name:'BOREDDY SIRI SAMYUKTHA',branch:'CSE',block: 'D', flour: '8977538503', room: 'D.NO:14-15,Delivery courier center', bench: 'PAID',corner: 'Odd' },
+                    80009: { name:'DASARI SAI HARSHA',branch:'AI&DS',block: 'A', flour: '7569068238', room: 'D.NO:`4-12,Knoweledge city', bench: 'NOT PAID',corner: 'Odd' },
+                    80010: { name:'DASARI KAJAL',branch:'ECS',block: 'B', flour: '1002006078', room: 'D.NO:7-8,Gorentla', bench: 'PAID',corner: 'Even'}
+                };
+
+                
+                var result = document.getElementById('result');
+                result.innerHTML = `
+                    <p>NAME: ${userInfo[username].name}</p>
+                    <p>BRANCH: ${userInfo[username].branch}</p>
+                    <p>CLUSTER: ${userInfo[username].block}</p>
+                    <p>CONTACT: ${userInfo[username].flour}</p>
+                    <p>ADDRESS: ${userInfo[username].room}</p>
+                    <p>SEMESTER: ${userInfo[username].corner}</p>
+                    <p>FEE STATUS: ${userInfo[username].corner}</p>                    
+                `;
+                result.style.fontWeight = "bold";
+            } 
+            else {
+                
+                document.getElementById('result').innerHTML = 'Invalid username';
+
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Enter Your Username </h2>
+    <form>
+        <label for="username">Username: </label>
+        <input type="number" id="username" name="username" min="80001" max="80010" required>
+        <br><br><button type="button" onclick="displayUserInfo()">Display Info</button></form></br></br>
+    </form>
+    <div id="result"></div>
+    <a href="file:///C:/Users/M%20BHAVANA%20NAGA%20SAI/OneDrive/Desktop/java1/display.html"><button type="submit">EXAM DETAILS</button></a>
+</body>
+</html>

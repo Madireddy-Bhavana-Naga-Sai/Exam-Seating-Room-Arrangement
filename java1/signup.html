@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Display</title>
+    <style>
+    body {
+        background-image: url(proceed.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        text-align: center; /* Moved text-align property to body for centering all content */
+    }
+    button {
+            padding: 5px 10px; /* Increase padding to increase button size */
+            background-color: #4CAF50; /* Change button color */
+            color: white; /* Change text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px; /* Increase font size */
+        }
+</style>
+    <script>
+        function displayUserInfo() {
+            // Get the input value
+            var username = document.getElementById('username').value;
+
+            // Check if the username is within the specified range (80001-80010)
+            if (username >= 2200080001 && username <= 2200080010) {
+                // Define the user information based on username
+                var userInfo = {
+                    2200080001: { name: 'DASARI SREE PUJITHA',block: 'A', flour: '1st', room: '101', bench: '1',corner: 'Right' },
+                    2200080002: { name:'SK FATHIMA BEE',block: 'B', flour: '2nd', room: '102', bench: '2',corner: 'Right' },
+                    2200080003: { name:'MADIREDDY BHAVANA NAGA SAI',block: 'C', flour: '3rd', room: '102', bench: '3',corner: 'Right' },
+                    2200080004: { name:'VADLAMUDI LASYA DURGA',block: 'D', flour: '4th', room: '102', bench: '4',corner: 'Right' },
+                    2200080005: { name:'BUDDHARAJU ROSHETHA',block: 'A', flour: '5th', room: '102', bench: '4',corner: 'Right' },
+                    2200080006: {name:'PALADUGU SAI SREE', block: 'B', flour: '1st', room: '102', bench: '6',corner: 'Right' },
+                    2200080007: { name:'CHAKKA ISHWARI TANVI',block: 'C', flour: '4th', room: '102', bench: '1',corner: 'Right' },
+                    2200080008: { name:'BOREDDY SIRI SAMYUKTHA',block: 'D', flour: '6th', room: '102', bench: '3',corner: 'Right' },
+                    2200080009: { name:'DASARI SAI HARSHA',block: 'A', flour: '6th', room: '102', bench: '4',corner: 'Right' },
+                    2200080010: { name:'DASARI KAJAL',block: 'B', flour: '2nd', room: '210', bench: '10',corner: 'Right'}
+                };
+
+                // Display the user information
+                var result = document.getElementById('result');
+                result.innerHTML = `
+                    <p>Name: ${userInfo[username].name}</p>
+                    <p>Block: ${userInfo[username].block}</p>
+                    <p>Floor: ${userInfo[username].flour}</p>
+                    <p>Room Number: ${userInfo[username].room}</p>
+                    <p>Bench Number: ${userInfo[username].bench}</p>
+                    <p>Corner: ${userInfo[username].corner}</p>
+                `;
+                result.style.fontWeight="bold";
+            } else {
+                // Display an error message if the username is not in the specified range
+                document.getElementById('result').innerHTML = 'Invalid username';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2><br><b>Enter Your Hall Ticket Number</b></br></h2>
+    <form>
+        <label for="username">Hall Ticket</label>
+        <input type="number" id="username" name="username" min="2200080001" max="2200080010" required>
+        <br><br></a><button type="button" onclick="displayUserInfo()">GET DETAILS</button></form></br></br>
+    </form>
+
+    <div id="result"></div>
+</body>
+</html>

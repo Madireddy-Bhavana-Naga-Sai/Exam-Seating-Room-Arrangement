@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;   
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-form {
+            display: inline-block;
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 12px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        body {
+            background-image: url(exam4.png);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        
+        h1 {
+            font-size: 5vw;
+        }
+
+        .next-word {
+            font-size: 2em; 
+        }
+    </style>
+</head>
+<body>
+    <body style="background-color:rgb(247, 186, 186);"></body> 
+    <div id="login-form">
+        <h2>Login</h2>
+        <form>
+            <label for="username">username:</label>
+            <input type="number" id="username" name="username" required>
+
+            <label for="password">password:</label>
+            <input type="password" id="password" name="password" required>
+            <a href="file:///C:/Users/M%20BHAVANA%20NAGA%20SAI/OneDrive/Desktop/java1/details.html"><button type="button" onclick="submit()">SUBMIT</button></a>
+        </form>
+        <form action="Login.php" method="post"></form>
+    </div>
+
+    <script>
+        function login() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            
+            if (username >= 80001 && username <= 80010) {
+                alert("Login successful! Welcome, User " + username);
+            } else {
+                alert("Invalid username or password.");
+            }
+        }
+    </script>
+</body>
+</html>
